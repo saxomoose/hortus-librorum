@@ -19,6 +19,7 @@ class TagFactory extends Factory
      *
      * @return array
      */
+    //Defines the Tag model's default state to be used at seed.
     public function definition()
     {
         return [

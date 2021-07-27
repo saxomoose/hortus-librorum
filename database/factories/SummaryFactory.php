@@ -20,6 +20,7 @@ class SummaryFactory extends Factory
      *
      * @return array
      */
+    //Defines the Summary model's default state to be used at seed.
     public function definition()
     {
         return [

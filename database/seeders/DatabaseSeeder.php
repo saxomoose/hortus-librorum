@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    //Seeds the application database.
     public function run()
     {
         Summary::factory(5)->create();
