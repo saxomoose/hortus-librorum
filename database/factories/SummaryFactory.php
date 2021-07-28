@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
 use App\Models\Summary;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,10 +25,11 @@ class SummaryFactory extends Factory
     public function definition()
     {
         return [
+            'author_id' => Author::factory(),
             'tag_id' => Tag::factory(),
             'slug' => $this->faker->slug(),
             'title' => $this->faker->sentence(),
-            'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',
+            'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
             'published_at' => $this->faker->dateTime
         ];

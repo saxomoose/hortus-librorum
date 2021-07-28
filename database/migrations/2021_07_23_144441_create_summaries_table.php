@@ -16,6 +16,7 @@ class CreateSummariesTable extends Migration
         //Creates new summaries table with specified columns.
         Schema::create('summaries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id');
             $table->foreignId('tag_id');
             $table->string('slug')->unique();
             $table->string('title');
