@@ -1,5 +1,6 @@
 <x-layout>
         <main role="main">
+            <x-tag-dropdown />
             <section>
                 <div class="album py-3 bg-light">
                     <div class="container">

@@ -12,7 +12,7 @@ class SummaryController extends Controller
     public function index() {
 
         return view('summaries.index', [
-            'summaries' => Summary::paginate(15)//filter + paginate
+            'summaries' => Summary::paginate(9)//filter + paginate
         ]);
     }
 
