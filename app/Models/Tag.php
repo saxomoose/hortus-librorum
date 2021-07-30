@@ -10,6 +10,6 @@ class Tag extends Model
     use HasFactory;
 
     public function summaries() {
-        return $this->hasMany(Summary::class);
+        return $this->belongsToMany(Summary::class);
     }
 }

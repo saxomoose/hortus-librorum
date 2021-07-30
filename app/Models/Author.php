@@ -9,7 +9,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    public function posts() {
-        return $this->hasMany(Summary::class);
+    public function summaries() {
+        return $this->belongsToMany(Summary::class);
     }
 }

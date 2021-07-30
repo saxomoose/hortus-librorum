@@ -9,13 +9,13 @@ class Summary extends Model
 {
     use HasFactory;
 
-    protected $with = ['tag'];
+    protected $with = ['authors', 'tags'];
 
-    public function author() {
-        return $this->belongsTo(Author::class);
+    public function authors() {
+        return $this->belongsToMany(Author::class);
     }
 
-    public function tag() {
-        return $this->belongsTo(Tag::class);
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
     }
 }

@@ -25,12 +25,10 @@ class SummaryFactory extends Factory
     public function definition()
     {
         return [
-            'author_id' => Author::factory(),
-            'tag_id' => Tag::factory(),
             'slug' => $this->faker->slug(),
             'title' => $this->faker->sentence(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
-            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
+            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(100)) . '</p>',
             'published_at' => $this->faker->dateTime
         ];
     }
