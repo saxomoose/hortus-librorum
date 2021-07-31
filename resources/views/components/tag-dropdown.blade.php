@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-start m-2">
+<div class="position-fixed ml-2 mt-4">
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tags

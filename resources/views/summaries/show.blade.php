@@ -1,7 +1,7 @@
 <x-layout>
+    <x-tag-dropdown />
     <main role="main">
-        <x-tag-dropdown />
-        <div class="container">
+        <div class="container mt-4">
             <div class="row">
                 <div class="col-sm-2">
                     <div class="row">
