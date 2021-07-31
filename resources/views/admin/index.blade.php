@@ -19,7 +19,6 @@
                         <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button>
                     </div>
                 </div>
-
             </section>
         </div>
     </main>
