@@ -6,7 +6,7 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @foreach($tags as $tag)
-                <a class="dropdown-item" href="/tags/{{$tag->slug}}">{{$tag->tag_name}}</a>
+                <a class="dropdown-item" href="/tags/{{$tag->slug}}">{{$tag->name}}</a>
             @endforeach
         </div>
     </div>

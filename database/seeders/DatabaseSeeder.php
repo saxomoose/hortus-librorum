@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     //Seeds the application database.
     public function run()
     {
-        Summary::factory(30)
+        Summary::factory(10)
             ->has(Author::factory()->count(2))
             ->has(Tag::factory()->count(3))
             ->create();

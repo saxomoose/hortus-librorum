@@ -21,4 +21,8 @@ class SummaryController extends Controller
             'summary' => $summary
         ]);
     }
+
+    public function create() {
+        return view('summaries.create');
+    }
 }

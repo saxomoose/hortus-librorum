@@ -1,7 +1,7 @@
 <div class="col-md-6">
     <div class="d-flex justify-content-end">
         @foreach($summary->tags as $tag)
-            <a href="/tags/{{$tag->slug}}" class="border border-info rounded mx-1 pl-1 pr-1">{{$tag->tag_name}}</a>
+            <a href="/tags/{{$tag->slug}}" class="border border-info rounded mx-1 pl-1 pr-1">{{$tag->name}}</a>
         @endforeach
     </div>
     <div class="card mb-4 shadow-sm mt-1">

@@ -17,15 +17,27 @@ use App\Http\Controllers\AuthorController;
 |
 */
 
-Route::get('/', [SummaryController::class, 'index'])->middleware('guest');
+Route::get('/', [SummaryController::class, 'index']);
 Route::get('tags/{tag:slug}', [TagController::class, 'index']);
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
 
 //Admin section
-//Send GET request to /login endpoint to access /admin route.
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
+//GET to /login endpoint to access /admin route.
+Route::get('admin', function() {
+    return view('admin.index');
+})->middleware('auth')->name('admin');
+
+Route::get('admin/summaries/create', [SummaryController::class, 'create'])->middleware('auth');
+Route::post('admin/summaries', [SummaryController::class, 'store'])->middleware('auth');
+
+Route::get('admin/tags/create', [TagController::class, 'create'])->middleware('auth');
+Route::post('admin/tags', [TagController::class, 'store'])->middleware('auth');
+
+
+
+
 
 
 

@@ -1,25 +1,23 @@
-<x-admin-layout>
+<x-admin-layout><!--TODO-->
     <main role="main">
         <div class="container">
-            <section class="mt-3">
-                <div class="row">
+            <x-flash-info></x-flash-info>
+            <section>
+                <div class="row my-4">
                     <div class="col">
-                        <button type="button" class="btn btn-primary">Add new post</button>
+                        <div class="d-flex">
+                            <a href="/admin/summaries/create" class="btn btn-primary">Add new post</a>
+                            <a href="/admin/tags/create" class="btn btn-primary ml-2">Add new tag</a><!--tag-->
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="mt-3">
-                <label>Summaries:</label>
-                <div class="d-flex">
-                    <div class="flex-fill">ID</div>
-                    <div class="flex-fill">Author</div>
-                    <div class="flex-fill">Title</div>
-                    <div class="flex-fill">Published date</div>
-                    <div class="ml-auto">
-                        <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </div>
+            <section>
+                <p><u>Summaries:</u></p>
+                    <x-summary-overview></x-summary-overview>
             </section>
         </div>
     </main>
+
+
 </x-admin-layout>

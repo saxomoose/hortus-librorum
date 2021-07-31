@@ -29,7 +29,7 @@ class SummaryFactory extends Factory
             'title' => $this->faker->sentence(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(100)) . '</p>',
-            'published_at' => $this->faker->dateTime
+            'published_at' => $this->faker->date()
         ];
     }
 }
