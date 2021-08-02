@@ -17,8 +17,8 @@ class CreateSummaryTagTable extends Migration
             $table->id();
 
             $table->unique(['summary_id', 'tag_id']);
-            $table->foreignId('summary_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('summary_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('tag_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

@@ -1,4 +1,4 @@
-<x-admin-layout><!--TODO-->
+<x-admin-layout>
     <main role="main">
         <div class="container">
             <x-flash-info></x-flash-info>
@@ -13,11 +13,13 @@
                 </div>
             </section>
             <section>
-                <p><u>Summaries:</u></p>
-                    <x-summary-overview></x-summary-overview>
+                <div class="row my-4">
+                    <div class="col">
+                        <p><u>Summaries:</u></p>
+                        <x-summary-overview></x-summary-overview>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
-
-
 </x-admin-layout>

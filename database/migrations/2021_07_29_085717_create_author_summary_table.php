@@ -17,8 +17,8 @@ class CreateAuthorSummaryTable extends Migration
             $table->id();
 
             $table->unique(['author_id', 'summary_id']);
-            $table->foreignId('author_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('summary_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('author_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('summary_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

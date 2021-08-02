@@ -50,7 +50,6 @@
                 </div>
             </section>
             {{$summaries->links()}}
-
         @else
             <p class="text-center">No summaries yet available.</p>
         @endif

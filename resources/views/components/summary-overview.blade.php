@@ -1,5 +1,5 @@
 @foreach($summaries as $summary)
-    <div class="d-flex mt-1">
+    <div class="d-flex">
         <div class="mr-3">{{$summary->id}}</div>
         <div class="flex-fill">
             @foreach($summary->authors as $author)

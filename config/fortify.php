@@ -137,7 +137,7 @@ return [
         //Features::emailVerification(),
         //Features::updateProfileInformation(),
         //Features::updatePasswords(),
-        /*Features::twoFactorAuthentication([
+        /*Features::twoFactorAuthentication([//If feature activated, migrations should be uncommented.
             'confirmPassword' => true,
         ]),*/
     ],

@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <main role="main">
+    <main role="main"><!--TODO-->
         <div class="container mt-4">
             <div class="row">
                 <div class="col">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label for="excerpt">Excerpt</label>
-                            <input type="text" class="form-control" name="tag" id="tag">
+                            <input type="text" class="form-control" name="excerpt" id="excerpt">
                         </div>
                         <div class="form-group">
                             <label for="textArea">Body</label>
