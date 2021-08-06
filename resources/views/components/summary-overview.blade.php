@@ -11,7 +11,15 @@
             @endforeach
         </div>
         <div class="flex-fill">{{$summary->title}}</div>
-        <div class="flex-fill">{{\Carbon\Carbon::parse($summary->published_at)->format('d/m/Y')}}</div>
+        <div class="flex-fill">
+            @foreach($summary->tags as $tag)
+                @if(!$loop->last)
+                    {{$tag->name . ', '}}
+                @else
+                    {{$tag->name}}
+                @endif
+            @endforeach
+        </div>
         <div class="ml-auto">
             <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button>
         </div>

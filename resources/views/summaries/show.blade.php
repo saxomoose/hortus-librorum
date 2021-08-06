@@ -10,6 +10,8 @@
                             <li class="py-1"><a href="/tags/{{$tag->slug}}" class="border border-info rounded pl-1 pr-1">{{$tag->name}}</a></li>
                     @endforeach
                     </ul>
+                    <p class="my-1">Summary published <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time> </p>
+                    <p class="my-1">Book published in {{$summary->publication_year}}</p>
                 </div>
                 <div class="col-sm-10">
                     <h1>{{$summary->title}}</h1>

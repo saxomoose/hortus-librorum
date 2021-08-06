@@ -1,9 +1,9 @@
 <x-admin-layout>
     <main role="main"><!--TODO-->
-        <div class="container mt-4">
-            <div class="row">
+        <div class="container">
+            <div class="row mt-4">
                 <div class="col">
-                    <a href="/admin">Back to dashboard</a>
+                    <a href="/summaries">Back to dashboard</a>
                 </div>
             </div>
             <div class="row mt-4">

@@ -27,7 +27,7 @@
                         @endif
                     @endforeach
                 </small>
-                <small class="text-muted mx-3">Published <time>{{$summary->created_at->diffForHumans()}}</time></small>
+                <small class="text-muted mx-3">Published <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time></small>
             </div>
             <p class="card-text">{!! $summary->excerpt !!}</p>
             <div class="d-flex justify-content-between align-items-center">
