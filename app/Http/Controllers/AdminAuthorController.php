@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Author;
+use Illuminate\Support\Str;
 
 class AdminAuthorController extends Controller
 {
@@ -16,67 +17,66 @@ class AdminAuthorController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('admin.authors.create');
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
-    }
+        $validatedAttributes = $this->validateAuthor();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $el = array('slug' => Str::slug($validatedAttributes['name']));
+        $attributes = array_merge($validatedAttributes, $el);
+
+        Author::create($attributes);
+
+        return redirect()->route('authors.index')->with('status', 'Author added.');
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Author $author) {
+        return view('admin.authors.edit', ['author' => $author]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Author $author)
     {
-        //
+        $validatedAttributes = $this->validateAuthor($author);
+
+        $el = array('slug' => Str::slug($validatedAttributes['name']));
+        $attributes = array_merge($validatedAttributes, $el);
+
+        $author->update($attributes);
+
+        return redirect()->route('authors.index')->with('status', 'Author updated.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('authors.index')->with('status', 'Author deleted.');
+    }
+
+    protected function validateAuthor(?Author $author = null): array {
+        //$author ??= new Author();
+
+        return request()->validate([
+            'name' => 'required'
+        ]);
     }
 }

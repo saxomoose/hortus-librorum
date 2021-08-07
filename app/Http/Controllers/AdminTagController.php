@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class AdminTagController extends Controller
@@ -26,65 +25,58 @@ class AdminTagController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
      */
-    public function store(Request $request)
+    public function store()
     {
-        $validatedAttributes = $request->validate([
-            'name' => 'required'
-        ]);
+        $validatedAttributes = $this->validateTag();
 
-        $el = array('slug' => Str::slug($request->input('name')));
+        $el = array('slug' => Str::slug($validatedAttributes['name']));
         $attributes = array_merge($validatedAttributes, $el);
 
         Tag::create($attributes);
 
-        return redirect()->route('admin')->with('status', 'Tag added.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('tags.index')->with('status', 'Tag added.');
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Tag $tag) {
+        return view('admin.tags.edit', ['tag' => $tag]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Tag $tag)
     {
-        //
+        $validatedAttributes = $this->validateTag($tag);
+
+        $el = array('slug' => Str::slug($validatedAttributes['name']));
+        $attributes = array_merge($validatedAttributes, $el);
+
+        $tag->update($attributes);
+
+        return redirect()->route('tags.index')->with('status', 'Tag updated.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+
+        return redirect()->route('tags.index')->with('status', 'Tag deleted.');
+    }
+
+    protected function validateTag(?Tag $tag = null): array {
+        //$tag ??= new Tag();
+
+        return request()->validate([
+            'name' => 'required'
+        ]);
     }
 }

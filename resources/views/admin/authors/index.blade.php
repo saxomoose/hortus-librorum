@@ -11,7 +11,7 @@
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('authors.create')}}" class="btn btn-primary">Add new tag</a>
+                            <a href="{{route('authors.create')}}" class="btn btn-primary">Add new author</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <section>
                 <div class="row my-4">
                     <div class="col">
-                        <p><u>Tags:</u></p>
+                        <p><u>Authors:</u></p>
                         <x-author-overview></x-author-overview>
                     </div>
                 </div>

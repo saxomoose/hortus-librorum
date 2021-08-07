@@ -9,6 +9,7 @@ class Summary extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];//to be reviewed
     protected $with = ['authors', 'tags'];
 
     public function authors() {

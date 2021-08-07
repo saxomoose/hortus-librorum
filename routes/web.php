@@ -24,7 +24,7 @@ use App\Http\Controllers\AdminAuthorController;
 Route::middleware('auth')->group(function() {//middleware('can:auth')?
     Route::get('admin', function () {
         return view('admin.index');
-    })->route('admin.index');
+    });
 
     Route::resource('summaries', AdminSummaryController::class)->except('show');
     Route::resource('tags', AdminTagController::class)->except('show');
@@ -32,8 +32,8 @@ Route::middleware('auth')->group(function() {//middleware('can:auth')?
 });
 
 //Public
-Route::get('/', [SummaryController::class, 'index'])->route('home');
-Route::get('tags/{tag:slug}', [TagController::class, 'index']);
+Route::get('/', [SummaryController::class, 'index']);
+Route::get('tags/{tag:slug}', [TagController::class, 'index']);//name routes
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);

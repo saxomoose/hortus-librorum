@@ -7,13 +7,13 @@
                 </div>
             </div>
             <section>
-                <div class="row mt-2">
+                <div class="row my-4 pb-4">
                     <div class="col-sm-6">
-                        <form method="POST" action="/admin/tags" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('tags.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Tag</label>
-                                <input type="text" class="form-control" name="name" id="name">
+                                <label for="name">Tag name</label>
+                                <input type="text" class="form-control" name="name" id="name" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>

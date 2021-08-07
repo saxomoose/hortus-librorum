@@ -1,5 +1,5 @@
 @foreach($summaries as $summary)
-    <div class="d-flex">
+    <div class="d-flex my-1">
         <div class="mr-3">{{$summary->id}}</div>
         <div class="flex-fill">
             @foreach($summary->authors as $author)
@@ -21,7 +21,13 @@
             @endforeach
         </div>
         <div class="ml-auto">
-            <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button>
+            <form method="POST" action="{{route('summaries.destroy', ['summary' => $summary])}}">
+                @csrf
+                @method('DELETE')
+                <a href="{{route('summaries.edit', ['summary' => $summary])}}" class="btn btn-primary">Edit</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
         </div>
     </div>
 @endforeach

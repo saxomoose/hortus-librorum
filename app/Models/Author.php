@@ -9,6 +9,8 @@ class Author extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];//to be reviewed
+
     public function summaries() {
         return $this->belongsToMany(Summary::class);
     }
