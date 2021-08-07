@@ -12,7 +12,7 @@ class SummaryController extends Controller
     public function index() {
 
         return view('summaries.index', [
-            'summaries' => Summary::paginate(9)//filter + paginate
+            'summaries' => Summary::paginate(9)
         ]);
     }
 
@@ -20,9 +20,5 @@ class SummaryController extends Controller
         return view('summaries.show', [
             'summary' => $summary
         ]);
-    }
-
-    public function create() {
-        return view('summaries.create');
     }
 }

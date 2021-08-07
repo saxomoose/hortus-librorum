@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SummaryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\AdminSummariesController;
-use App\Http\Controllers\AdminTagsController;
-use App\Http\Controllers\AdminAuthorsController;
+use App\Http\Controllers\AdminSummaryController;
+use App\Http\Controllers\AdminTagController;
+use App\Http\Controllers\AdminAuthorController;
 
 
 /*
@@ -19,21 +19,20 @@ use App\Http\Controllers\AdminAuthorsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 //Admin section
 //GET to /login endpoint to access /admin route.
 Route::middleware('auth')->group(function() {//middleware('can:auth')?
     Route::get('admin', function () {
         return view('admin.index');
-    });
+    })->route('admin.index');
 
-    Route::resource('summaries', AdminSummariesController::class)->except('show');
-    Route::resource('tags', AdminTagsController::class)->except('show');
-    Route::resource('authors', AdminAuthorsController::class)->except('show');
+    Route::resource('summaries', AdminSummaryController::class)->except('show');
+    Route::resource('tags', AdminTagController::class)->except('show');
+    Route::resource('authors', AdminAuthorController::class)->except('show');
 });
 
 //Public
-Route::get('/', [SummaryController::class, 'index']);
+Route::get('/', [SummaryController::class, 'index'])->route('home');
 Route::get('tags/{tag:slug}', [TagController::class, 'index']);
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
