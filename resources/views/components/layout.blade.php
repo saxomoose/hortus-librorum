@@ -25,7 +25,7 @@
                     <div class="col-sm-4 py-2">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Contact form</a></li>
+                            <li><a href="/contact" class="text-white">Contact form</a></li>
                         </ul>
                     </div>
                 </div>

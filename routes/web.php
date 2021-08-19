@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SummaryController;
 use App\Http\Controllers\TagController;
@@ -33,10 +34,14 @@ Route::middleware('auth')->group(function() {//middleware('can:auth')?
 
 //Public
 Route::get('/', [SummaryController::class, 'index']);
-Route::get('tags/{tag:slug}', [TagController::class, 'index']);//name routes
+Route::get('tags/{tag:slug}', [TagController::class, 'index']);//TODO name routes
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
+
+Route::get('/contact', [ContactFormController::class, 'index']);
+Route::post('/contact', [ContactFormController::class, 'handleContactForm']);
+
 
 
 
