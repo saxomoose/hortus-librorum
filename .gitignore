@@ -28,8 +28,6 @@ docker-compose.override.yml
 /.vscode
 _ide_helper.php
 _ide_helper_models.php
-composer.lock
-package-lock.json
 .editorconfig
 
 /public/css/
