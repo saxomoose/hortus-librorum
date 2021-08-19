@@ -6,7 +6,7 @@ A blog powered by [Laravel 8](https://laravel.com/docs/8.x). The blog is designe
 
 - [Laracasts](https://laracasts.com/series/laravel-8-from-scratch) - Laravel 8 From Scratch including source code available on this [github repo](https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project).
 - [Welcm Software](https://welcm.uk/blog/creating-a-contact-form-for-your-laravel-website) - Creating a contact form for your Laravel website.
--[Laravel Daily](https://www.youtube.com/watch?v=NuGBzmHlINQ) - Auth in Laravel 8: Fortify and Laravel UI (without Jetstream).
+- [Laravel Daily](https://www.youtube.com/watch?v=NuGBzmHlINQ) - Auth in Laravel 8: Fortify and Laravel UI (without Jetstream).
 
 ## Dependencies
 
