@@ -32,9 +32,9 @@ Route::middleware('auth')->group(function() {//middleware('can:auth')?
     Route::resource('authors', AdminAuthorController::class)->except('show');
 });
 
-//Public
+//Public section
 Route::get('/', [SummaryController::class, 'index']);
-Route::get('tags/{tag:slug}', [TagController::class, 'index']);//TODO name routes
+Route::get('tags/{tag:slug}', [TagController::class, 'index']);
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
