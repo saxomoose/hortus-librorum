@@ -16,8 +16,6 @@
 /resources/views/vendor/pagination/simple-default.blade.php
 /resources/views/vendor/pagination/simple-tailwind.blade.php
 /resources/views/vendor/pagination/tailwind.blade.php
-/storage/*.key
 /vendor
 _ide_helper.php
 _ide_helper_models.php
-bootstrap/compiled.php
