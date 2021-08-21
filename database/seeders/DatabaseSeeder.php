@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     //Seeds the application database.
-    public function run()
-    {
+    public function run() {
+        //has() functions populate the intermediate tables.
         Summary::factory(10)
             ->has(Author::factory()->count(2))
             ->has(Tag::factory()->count(3))

@@ -16,7 +16,7 @@ class UserFactory extends Factory
     protected $model = User::class;
 
     /**
-     * Define the model's default state.
+     * Application has only one registered user generated at seed. This user is also the (only) admin.
      *
      * @return array
      */

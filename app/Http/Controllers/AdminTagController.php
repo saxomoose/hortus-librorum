@@ -30,6 +30,7 @@ class AdminTagController extends Controller
     {
         $validatedAttributes = $this->validateTag();
 
+        //Generates slug on the basis of tag name and adds it to form data to be persisted.
         $el = array('slug' => Str::slug($validatedAttributes['name']));
         $attributes = array_merge($validatedAttributes, $el);
 
@@ -52,6 +53,7 @@ class AdminTagController extends Controller
     {
         $validatedAttributes = $this->validateTag($tag);
 
+        //Generates slug on the basis of tag name and adds it to form data to be persisted.
         $el = array('slug' => Str::slug($validatedAttributes['name']));
         $attributes = array_merge($validatedAttributes, $el);
 
@@ -62,8 +64,6 @@ class AdminTagController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
      */
     public function destroy(Tag $tag)
     {
@@ -72,6 +72,11 @@ class AdminTagController extends Controller
         return redirect()->route('tags.index')->with('status', 'Tag deleted.');
     }
 
+    /**
+     * Server-side validation of create and edit form inputs.
+     * @param Tag|null $tag
+     * @return array
+     */
     protected function validateTag(?Tag $tag = null): array {
         //$tag ??= new Tag();
 

@@ -4,8 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContactFormRequest extends FormRequest
-{
+class ContactFormRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -32,8 +31,7 @@ class ContactFormRequest extends FormRequest
 
     public function messages(){
         return [
-            'required' => 'The :attribute field is required.',
-            'email' => 'The :attribute must be a valid :attribute address'
+            'required' => 'The :attribute field is required.'
         ];
     }
 }

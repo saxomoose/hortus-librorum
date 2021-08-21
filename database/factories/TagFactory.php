@@ -15,11 +15,10 @@ class TagFactory extends Factory
     protected $model = Tag::class;
 
     /**
-     * Define the model's default state.
+     * Define the Tag model's default state to be used at seed.
      *
      * @return array
      */
-    //Defines the Tag model's default state to be used at seed.
     public function definition()
     {
         return [

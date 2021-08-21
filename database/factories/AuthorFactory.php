@@ -15,7 +15,7 @@ class AuthorFactory extends Factory
     protected $model = Author::class;
 
     /**
-     * Define the model's default state.
+     * Defines the Author model's default state to be used at seed.
      *
      * @return array
      */

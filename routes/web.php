@@ -21,24 +21,33 @@ use App\Http\Controllers\AdminAuthorController;
 |
 */
 //Admin section
-//GET to /login endpoint to access /admin route.
+//Send GET request to /login endpoint to access /admin route.
 Route::middleware('auth')->group(function() {//middleware('can:auth')?
+    //Route to landing page of admin section.
     Route::get('admin', function () {
         return view('admin.index');
     });
 
+    //Resource controller for summary model.
     Route::resource('summaries', AdminSummaryController::class)->except('show');
+    //Resource controller for tag model.
     Route::resource('tags', AdminTagController::class)->except('show');
+    //Resource controller for author model.
     Route::resource('authors', AdminAuthorController::class)->except('show');
 });
 
 //Public section
+//Route to landing page of public section.
 Route::get('/', [SummaryController::class, 'index']);
+//Route to display all summaries linked to a given tag.
 Route::get('tags/{tag:slug}', [TagController::class, 'index']);
+//Route to display all summaries of books published by a given author.
 Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 
+//Route to single summary view.
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
 
+//Routes to access and post messages to admin.
 Route::get('/contact', [ContactFormController::class, 'index']);
 Route::post('/contact', [ContactFormController::class, 'handleContactForm']);
 

@@ -8,8 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Http\Requests\ContactFormRequest;
 
-class ContactFormAck extends Notification
-{
+class ContactFormMessage extends Notification {
     use Queueable;
 
     protected $message;

@@ -30,6 +30,7 @@ class AdminAuthorController extends Controller
     {
         $validatedAttributes = $this->validateAuthor();
 
+        //Generates slug on the basis of author name and adds it to form data to be persisted.
         $el = array('slug' => Str::slug($validatedAttributes['name']));
         $attributes = array_merge($validatedAttributes, $el);
 
@@ -52,6 +53,7 @@ class AdminAuthorController extends Controller
     {
         $validatedAttributes = $this->validateAuthor($author);
 
+        //Generates slug on the basis of author name and adds it to form data to be persisted.
         $el = array('slug' => Str::slug($validatedAttributes['name']));
         $attributes = array_merge($validatedAttributes, $el);
 
@@ -62,8 +64,6 @@ class AdminAuthorController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
      */
     public function destroy(Author $author)
     {
@@ -72,6 +72,11 @@ class AdminAuthorController extends Controller
         return redirect()->route('authors.index')->with('status', 'Author deleted.');
     }
 
+    /**
+     * Server-side validation of create and edit form inputs.
+     * @param Author|null $author
+     * @return array
+     */
     protected function validateAuthor(?Author $author = null): array {
         //$author ??= new Author();
 

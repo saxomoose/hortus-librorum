@@ -15,11 +15,10 @@ class SummaryFactory extends Factory
     protected $model = Summary::class;
 
     /**
-     * Define the model's default state.
+     * Defines the Summary model's default state to be used at seed.
      *
      * @return array
      */
-    //Defines the Summary model's default state to be used at seed.
     public function definition()
     {
         return [
