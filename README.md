@@ -23,7 +23,7 @@ A blog powered by [Laravel 8](https://laravel.com/docs/8.x). The blog is designe
 ## Use of admin section
 
 - Admin section is accessible via `admin` route. Access requires prior login via `login` route. There is only one registered user (generated at seed not via `register` route) who is also the (only) admin. The credentials can be found at `database/factories/UserFactory.php` (to be changed in production).
-- Admin section is decomposed in three admin panels. In order to add a new summary, the admin should create the appropriate author(s) and tag(s) first and link them subsequently to the new summary. Summaries can have multiple authors and tags.
+- Admin section is decomposed in three admin panels. In order to add a new summary, the admin should create the appropriate author(s) and tag(s) first and link them subsequently to the new summary. Summaries can have many authors and tags (and vice versa).
 - The admin can also edit and delete existing summaries, authors and tags.
 
 ## License
