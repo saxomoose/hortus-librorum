@@ -28,11 +28,11 @@ Route::middleware('auth')->group(function() {//middleware('can:auth')?
         return view('admin.index');
     });
 
-    //Resource controller for summary model.
+    //Resource controller for Summary model.
     Route::resource('summaries', AdminSummaryController::class)->except('show');
-    //Resource controller for tag model.
+    //Resource controller for Tag model.
     Route::resource('tags', AdminTagController::class)->except('show');
-    //Resource controller for author model.
+    //Resource controller for Author model.
     Route::resource('authors', AdminAuthorController::class)->except('show');
 });
 
@@ -47,7 +47,7 @@ Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
 //Route to single summary view.
 Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
 
-//Routes to access and post messages to admin.
+//Routes to access and handle contact form.
 Route::get('/contact', [ContactFormController::class, 'index']);
 Route::post('/contact', [ContactFormController::class, 'handleContactForm']);
 
