@@ -1,6 +1,6 @@
 # Philoblog
 
-A blog powered by [Laravel 8](https://laravel.com/docs/8.x). The blog is designed to serve as a repository of book summaries. Public users can look for summaries by author name or by category (tag).
+A blog powered by [Laravel 8](https://laravel.com/docs/8.x). The blog is designed to serve as a repository of book summaries. Public visitors can look for summaries by author name or by category (tag).
 
 ## Sources and inspirations
 
