@@ -5,8 +5,7 @@ namespace App\View\Components;
 use App\Models\Author;
 use Illuminate\View\Component;
 
-class AuthorOverview extends Component
-{
+class AuthorOverview extends Component {
     /**
      * Create a new component instance.
      *

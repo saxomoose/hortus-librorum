@@ -6,8 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
-{
+class UserFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
@@ -26,7 +25,7 @@ class UserFactory extends Factory
             'name' => "Mathieu Tulpinck",
             'email' => "email@example.com",
             'email_verified_at' => now(),
-            'password' => bcrypt("password"), // password
+            'password' => bcrypt("password"),
             'remember_token' => Str::random(10),
         ];
     }

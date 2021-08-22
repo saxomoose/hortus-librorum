@@ -5,8 +5,7 @@ namespace App\View\Components;
 use App\Models\Tag;
 use Illuminate\View\Component;
 
-class TagSelect extends Component
-{
+class TagSelect extends Component {
     /**
      * Create a new component instance.
      *

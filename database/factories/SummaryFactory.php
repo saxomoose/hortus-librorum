@@ -4,9 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Summary;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class SummaryFactory extends Factory
-{
+class SummaryFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
@@ -19,11 +19,13 @@ class SummaryFactory extends Factory
      *
      * @return array
      */
-    public function definition()
-    {
+    public function definition() {
+        $title = $this->faker->sentence();
+        $slug = Str::of($title)->slug('-');
+
         return [
-            'slug' => $this->faker->slug(),
-            'title' => $this->faker->sentence(),
+            'title' => $title,
+            'slug' => $slug,
             'publication_year' => $this->faker->year(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(100)) . '</p>',

@@ -4,20 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSummariesTable extends Migration
-{
+class CreateSummariesTable extends Migration {
     /**
-     * Run the migrations.
+     * Run the migrations. Creates new summaries table with specified columns.
      *
      * @return void
      */
     public function up()
     {
-        //Creates new summaries table with specified columns.
         Schema::create('summaries', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->year('publication_year');
             $table->text('excerpt');
             $table->text('body');

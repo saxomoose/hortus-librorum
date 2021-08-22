@@ -132,7 +132,7 @@ return [
     */
 
     'features' => [
-        //Features::registration(),
+        //Features::registration(),//Deactivated given that only user is generated at seed.
         //Features::resetPasswords(),
         //Features::emailVerification(),
         //Features::updateProfileInformation(),

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model {
     use HasFactory;
 
-    protected $guarded = [];//to be reviewed
+    protected $guarded = [];
 
     public function summaries() {
         return $this->belongsToMany(Summary::class);

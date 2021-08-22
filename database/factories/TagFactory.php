@@ -4,9 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class TagFactory extends Factory
-{
+class TagFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
@@ -19,11 +19,13 @@ class TagFactory extends Factory
      *
      * @return array
      */
-    public function definition()
-    {
+    public function definition() {
+        $name = $this->faker->word();
+        $slug = Str::of($name)->slug();
+
         return [
-            'name' => $this->faker->unique()->word(),
-            'slug' => $this->faker->unique()->slug()
+            'name' => $name,
+            'slug' => $slug
         ];
     }
 }

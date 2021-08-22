@@ -24,7 +24,7 @@ class ContactFormRequest extends FormRequest {
     {
         return [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required',//Add verification for e-mail in production.
             'body' => 'required'
         ];
     }

@@ -4,9 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class AuthorFactory extends Factory
-{
+class AuthorFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
@@ -19,11 +19,13 @@ class AuthorFactory extends Factory
      *
      * @return array
      */
-    public function definition()
-    {
+    public function definition() {
+        $name = $this->faker->name();
+        $slug = Str::of($name)->slug('-');
+
         return [
-            'name' => $this->faker->name(),
-            'slug' => $this->faker->unique()->slug()
+            'name' => $name,
+            'slug' => $slug
         ];
     }
 }

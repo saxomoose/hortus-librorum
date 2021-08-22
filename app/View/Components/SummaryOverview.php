@@ -5,8 +5,7 @@ namespace App\View\Components;
 use App\Models\Summary;
 use Illuminate\View\Component;
 
-class SummaryOverview extends Component
-{
+class SummaryOverview extends Component {
     /**
      * Create a new component instance.
      *

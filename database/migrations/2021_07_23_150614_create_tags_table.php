@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTagsTable extends Migration
-{
+class CreateTagsTable extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,8 +14,8 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('slug')->unique();
+            $table->string('name');//Use ->unique() constraint in production.
+            $table->string('slug');//Use ->unique() constraint in production.
             $table->timestamps();
         });
     }

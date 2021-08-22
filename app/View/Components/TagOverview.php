@@ -5,8 +5,7 @@ namespace App\View\Components;
 use App\Models\Tag;
 use Illuminate\View\Component;
 
-class TagOverview extends Component
-{
+class TagOverview extends Component {
     /**
      * Create a new component instance.
      *

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateAuthorSummaryTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. Intermediate table.
      *
      * @return void
      */

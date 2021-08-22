@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 py-2">
-                        <h4 class="text-white">About</h4>
+                        <h4 class="text-white">Description</h4>
                         <p class="text-muted">This website serves as a repository of book summaries.</p>
                     </div>
                     <div class="col-sm-4 py-2">
@@ -27,6 +27,7 @@
                         <ul class="list-unstyled">
                             <li><a href="/contact" class="text-white">Contact form</a></li>
                         </ul>
+                        <h4 class="text-white"><a href="/about" class="text-white">About</a></h4>
                     </div>
                 </div>
             </div>

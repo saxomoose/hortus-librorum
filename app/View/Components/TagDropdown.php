@@ -5,8 +5,7 @@ namespace App\View\Components;
 use App\Models\Tag;
 use Illuminate\View\Component;
 
-class TagDropdown extends Component
-{
+class TagDropdown extends Component {
 
     /**
      * Get the view / contents that represent the component.
