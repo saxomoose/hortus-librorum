@@ -1,6 +1,10 @@
 <x-layout>
     <div class="container mt-4">
         <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fuga ipsa modi necessitatibus sed? Culpa cum dolorem dolores ea excepturi expedita illo omnis! Amet architecto autem consequatur cupiditate debitis doloribus eaque est excepturi, harum illo ipsum laborum nemo pariatur quibusdam saepe sapiente veritatis voluptatem voluptatibus. Consectetur dicta id quibusdam. Alias aut molestiae quia quis vel. Accusantium dignissimos dolorum molestiae. Aperiam ex iusto minima modi numquam ratione temporibus totam unde? Aliquid, animi aut autem consequatur cupiditate deserunt dolorum eum eveniet fugit incidunt iure laborum necessitatibus nihil officia porro quaerat quibusdam repellendus sapiente sit soluta sunt temporibus, veniam vero? Ex, ipsa, tenetur.</p>
+        <ul>
+            <li><a href="https://laracasts.com/series/laravel-8-from-scratch">Laracasts - Laravel 8 From Scratch</a> including source code available on this <a href="https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project">github repo</a></li>
+            <li><a href="https://welcm.uk/blog/creating-a-contact-form-for-your-laravel-website">Welcm Software - Creating a contact form for your Laravel website.</a></li>
+            <li><a href="">Laravel Daily - Auth in Laravel 8: Fortify and Laravel UI (without Jetstream)</a></li>
+        </ul>
     </div>
 </x-layout>
