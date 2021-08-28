@@ -36,7 +36,7 @@ class AdminTagController extends Controller
 
         Tag::create($attributes);
 
-        return redirect()->route('tags.index')->with('status', 'Tag added.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag added.');
     }
 
     /**
@@ -59,7 +59,7 @@ class AdminTagController extends Controller
 
         $tag->update($attributes);
 
-        return redirect()->route('tags.index')->with('status', 'Tag updated.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag updated.');
     }
 
     /**
@@ -69,7 +69,7 @@ class AdminTagController extends Controller
     {
         $tag->delete();
 
-        return redirect()->route('tags.index')->with('status', 'Tag deleted.');
+        return redirect()->route('admin.tags.index')->with('status', 'Tag deleted.');
     }
 
     /**

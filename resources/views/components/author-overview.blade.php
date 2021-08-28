@@ -3,10 +3,10 @@
         <div class="mr-3">{{$author->id}}</div>
         <div class="flex-fill">{{$author->name}}</div>
         <div class="ml-auto">
-            <form method="POST" action="{{route('authors.destroy', ['author' => $author])}}">
+            <form method="POST" action="{{route('admin.authors.destroy', ['author' => $author])}}">
                 @csrf
                 @method('DELETE')
-                <a href="{{route('authors.edit', ['author' => $author])}}" class="btn btn-primary">Edit</a>
+                <a href="{{route('admin.authors.edit', ['author' => $author])}}" class="btn btn-primary">Edit</a>
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
 

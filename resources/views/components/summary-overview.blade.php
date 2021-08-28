@@ -21,10 +21,10 @@
             @endforeach
         </div>
         <div class="ml-auto">
-            <form method="POST" action="{{route('summaries.destroy', ['summary' => $summary])}}">
+            <form method="POST" action="{{route('admin.summaries.destroy', ['summary' => $summary])}}">
                 @csrf
                 @method('DELETE')
-                <a href="{{route('summaries.edit', ['summary' => $summary])}}" class="btn btn-primary">Edit</a>
+                <a href="{{route('admin.summaries.edit', ['summary' => $summary])}}" class="btn btn-primary">Edit</a>
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
 

@@ -22,11 +22,10 @@ class UserFactory extends Factory {
     public function definition()
     {
         return [
-            'name' => "admin",
+            'name' => "Guibert Tulpinck",
             'email' => "email@example.com",
             'email_verified_at' => now(),
-            'password' => bcrypt("123456"),
-            'remember_token' => Str::random(10),
+            'password' => bcrypt("password")
         ];
     }
 

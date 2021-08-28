@@ -11,7 +11,7 @@
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('summaries.create')}}" class="btn btn-primary">Add new summary</a>
+                            <a href="{{route('admin.summaries.create')}}" class="btn btn-primary">Add new summary</a>
                         </div>
                     </div>
                 </div>

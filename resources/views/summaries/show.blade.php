@@ -2,7 +2,7 @@
     <x-tag-dropdown />
     <main role="main">
         <div class="container mt-4">
-            <div class="row">
+            <div class="row" >
                 <div class="col-sm-2">
                     <a href="/">Back to overview</a>
                     <ul style="list-style-type: none; padding: 0; margin: 0">
@@ -24,7 +24,7 @@
                             @endif
                         @endforeach
                     </h4>
-                    <div class="mt-4">{!! $summary->body !!}</div>
+                    <div class="mt-4">{!! $summary->lb_content !!}</div>
                 </div>
             </div>
         </div>

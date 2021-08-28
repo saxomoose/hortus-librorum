@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Summary;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -30,16 +31,21 @@ class AdminSummaryController extends Controller
     {
         $validatedAttributes = $this->validateSummary();
 
-        //Generates slug on the basis of summary title and adds it to form data to be persisted.
-        $validatedAttributesCleaned = array_diff_key($validatedAttributes, ['authors' => 'xy', 'tags' => 'xy']);
-        $slugEl = array('slug' => Str::slug($validatedAttributesCleaned['title']));
-        $attributes = array_merge($validatedAttributesCleaned, $slugEl);
+        $summary = new Summary;
+        $summary->title = $validatedAttributes['title'];
+        $summary->slug = Str::slug($validatedAttributes['title']);
+        $summary->publication_year = $validatedAttributes['publication_year'];
+        $summary->excerpt = $validatedAttributes['excerpt'];
+        $summary->published_at = Carbon::now();
 
-        $summary = Summary::create($attributes);
+        $summary->lb_content = $validatedAttributes['body'];
+
+        $summary->save();
+
         $summary->authors()->attach($validatedAttributes['authors']);
         $summary->tags()->attach($validatedAttributes['tags']);
 
-        return redirect()->route('summaries.index')->with('status', 'Summary added.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Summary added.');
     }
 
     /**
@@ -56,18 +62,19 @@ class AdminSummaryController extends Controller
     public function update(Summary $summary)
     {
         $validatedAttributes = $this->validateSummary();
+        $summary->title = $validatedAttributes['title'];
+        $summary->slug = Str::slug($validatedAttributes['title']);
+        $summary->publication_year = $validatedAttributes['publication_year'];
+        $summary->excerpt = $validatedAttributes['excerpt'];
 
-        //Generates slug on the basis of author name and adds it to form data to be persisted.
-        $validatedAttributesCleaned = array_diff_key($validatedAttributes, ['authors' => 'xy', 'tags' => 'xy']);
-        $slugEl = array('slug' => Str::slug($validatedAttributesCleaned['title']));
-        $attributes = array_merge($validatedAttributesCleaned, $slugEl);
+        $summary->lb_content = $validatedAttributes['body'];
 
+        $summary->save();
 
-        $summary->update($attributes);
-        $summary->authors()->attach($validatedAttributes['authors']);
-        $summary->tags()->attach($validatedAttributes['tags']);
+        $summary->authors()->sync($validatedAttributes['authors']);
+        $summary->tags()->sync($validatedAttributes['tags']);
 
-        return redirect()->route('summaries.index')->with('status', 'Summary added.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Summary updated.');
     }
 
     /**
@@ -77,7 +84,7 @@ class AdminSummaryController extends Controller
     {
         $summary->delete();
 
-        return redirect()->route('summaries.index')->with('status', 'Summary deleted.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Summary deleted.');
     }
 
     /**

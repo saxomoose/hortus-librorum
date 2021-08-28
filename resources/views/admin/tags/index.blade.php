@@ -11,7 +11,7 @@
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('tags.create')}}" class="btn btn-primary">Add new tag</a>
+                            <a href="{{route('admin.tags.create')}}" class="btn btn-primary">Add new tag</a>
                         </div>
                     </div>
                 </div>

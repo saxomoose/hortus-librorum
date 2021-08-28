@@ -5,8 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         html {
             scroll-behavior: smooth;
@@ -40,6 +44,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('auth.2fa')}}">Settings</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -61,6 +66,7 @@
     {{ $slot }}
 
     <x-footer></x-footer>
+@yield('scripts')
 </body>
 </html>
 

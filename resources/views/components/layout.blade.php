@@ -5,12 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         html {
             scroll-behavior: smooth;
         }
+
     </style>
 </head>
 <body>
@@ -19,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 py-2">
-                        <h4 class="text-white">Description</h4>
+                        <h4 class="text-white">About</h4>
                         <p class="text-muted">This website serves as a repository of book summaries.</p>
                     </div>
                     <div class="col-sm-4 py-2">
@@ -27,7 +35,6 @@
                         <ul class="list-unstyled">
                             <li><a href="/contact" class="text-white">Contact form</a></li>
                         </ul>
-                        <h4 class="text-white"><a href="/about" class="text-white">About</a></h4>
                     </div>
                 </div>
             </div>
@@ -48,5 +55,6 @@
     {{ $slot }}
 
     <x-footer></x-footer>
+@yield('scripts')
 </body>
 </html>

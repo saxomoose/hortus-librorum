@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col">
-                    <a href="{{route('authors.index')}}">Back to dashboard</a>
+                    <a href="{{route('admin.authors.index')}}">Back to dashboard</a>
                 </div>
             </div>
             <section>
                 <div class="row my-4 pb-4">
                     <div class="col-sm-6">
-                        <form method="POST" action="{{route('authors.store')}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('admin.authors.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Author name</label>

@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\ContactFormController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SummaryController;
-use App\Http\Controllers\TagController;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\AdminAuthorController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminSummaryController;
 use App\Http\Controllers\AdminTagController;
-use App\Http\Controllers\AdminAuthorController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\SummaryController;
+use App\Http\Controllers\TagController;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -20,14 +22,17 @@ use App\Http\Controllers\AdminAuthorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Auth
+Route::middleware('auth')->prefix('auth')->name('auth.')->group(function() {
+    //Route to enable or disable 2FA.
+    Route::get('2fa', [AuthController::class, 'manage2FA'])->name('2fa');
+});
+
 //Admin section
 //Send GET request to /login endpoint to access /admin route.
-Route::middleware('auth')->group(function() {//middleware('can:auth')?
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     //Route to landing page of admin section.
-    Route::get('admin', function () {
-        return view('admin.index');
-    });
-
+    Route::get('', [AdminController::class, 'index']);
     //Resource controller for Summary model.
     Route::resource('summaries', AdminSummaryController::class)->except('show');
     //Resource controller for Tag model.
@@ -39,10 +44,6 @@ Route::middleware('auth')->group(function() {//middleware('can:auth')?
 //Public section
 //Route to landing page of public section.
 Route::get('/', [SummaryController::class, 'index']);
-//Route to about page.
-Route::get('/about', function(){
-    return view('about');
-});
 //Route to display all summaries linked to a given tag.
 Route::get('tags/{tag:slug}', [TagController::class, 'index']);
 //Route to display all summaries of books published by a given author.

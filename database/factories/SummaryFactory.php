@@ -28,7 +28,7 @@ class SummaryFactory extends Factory {
             'slug' => $slug,
             'publication_year' => $this->faker->year(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
-            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(100)) . '</p>',
+            'lb_content' => '<p>' . implode('</p><p>', $this->faker->paragraphs(100)) . '</p>',
             'published_at' => $this->faker->dateTime()//to be reviewed
         ];
     }

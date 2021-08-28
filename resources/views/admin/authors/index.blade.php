@@ -11,7 +11,7 @@
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('authors.create')}}" class="btn btn-primary">Add new author</a>
+                            <a href="{{route('admin.authors.create')}}" class="btn btn-primary">Add new author</a>
                         </div>
                     </div>
                 </div>

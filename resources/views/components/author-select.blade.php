@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group col-sm-6">
     <label for="authorSelect">Author(s)</label>
     <select class="form-control" name="authors[]" id="authorSelect" multiple required>
         @foreach($authors as $author)
