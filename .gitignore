@@ -8,7 +8,6 @@
 /public/js/
 /public/mix-manifest.json
 /public/storage
-/resources/sass/
 /resources/views/vendor/mail/
 /resources/views/vendor/pagination/default.blade.php
 /resources/views/vendor/pagination/semantic-ui.blade.php
