@@ -13,4 +13,19 @@
             </div>
         </section>
     </main>
+@section('scripts')
+    <script>
+        document.querySelectorAll('.card-img').forEach( elem => {
+
+            let R = Math.floor((Math.random() * 127) + 127);
+            let G = Math.floor((Math.random() * 127) + 127);
+            let B = Math.floor((Math.random() * 127) + 127);
+
+            let rgb = (R << 16) + (G << 8) + B;
+
+            let pastel = `#${rgb.toString(16)}`;
+            elem.setAttribute('fill', pastel);
+        })
+    </script>
+@endsection
 </x-layout>

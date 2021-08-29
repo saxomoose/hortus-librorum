@@ -7,7 +7,7 @@
     <div class="card mb-4 shadow-sm mt-1">
         <svg class="card-img" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%"/>
             <foreignObject x="0" y="0" height="100%" width="100%">
-                <div class="text-center text-light my-5 py-5">
+                <div class="text-center text-dark my-5 py-5">
                     {{$summary->title}}
                 </div>
             </foreignObject>
