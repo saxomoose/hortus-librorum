@@ -1,4 +1,7 @@
 <x-layout>
+@section('stylesheets')
+        <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+@endsection
     <x-tag-dropdown />
     <main role="main">
         <div class="container mt-4">

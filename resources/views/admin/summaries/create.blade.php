@@ -1,4 +1,7 @@
 <x-admin-layout>
+@section('stylesheets')
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+@endsection
     <main role="main">
         <div class="container">
             <div class="row mt-4">
@@ -40,6 +43,10 @@
         </div>
     </main>
 @section('scripts')
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             Laraberg.init('body', {height: '600px', sidebar: true})
