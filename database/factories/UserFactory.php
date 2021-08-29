@@ -23,7 +23,7 @@ class UserFactory extends Factory {
     {
         return [
             'name' => "Guibert Tulpinck",
-            'email' => "email@example.com",
+            'email' => "guibert.tulpinck@gmail.com",
             'email_verified_at' => now(),
             'password' => bcrypt("password")
         ];

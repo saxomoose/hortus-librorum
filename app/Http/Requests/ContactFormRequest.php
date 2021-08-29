@@ -23,15 +23,16 @@ class ContactFormRequest extends FormRequest {
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required',//Add verification for e-mail in production.
+            'name' => 'required|max: 255',
+            'email' => 'required|email|max:255',
             'body' => 'required'
         ];
     }
 
     public function messages(){
         return [
-            'required' => 'The :attribute field is required.'
+            'required' => 'The :attribute field is required.',
+            'email' => 'The :attribute must a valid :attribute address'
         ];
     }
 }
