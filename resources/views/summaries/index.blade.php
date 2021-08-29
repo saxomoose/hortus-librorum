@@ -33,7 +33,7 @@
                                     <small class="text-muted mx-3">Published <time>{{\Carbon\Carbon::parse($summaries[0]->published_at)->diffForHumans()}}</time></small>
                                 </div>
                             <p class="lead text-muted">{!! $summaries[0]->excerpt !!}</p>
-                            <a href="/summaries/{{$summaries[0]->slug}}" class="btn btn-primary my-2">Continue reading</a>
+                            <a href="/summaries/{{$summaries[0]->slug}}" class="btn btn-primary my-2">Continue reading more</a>
                         </div>
                     </div>
                 </div>
