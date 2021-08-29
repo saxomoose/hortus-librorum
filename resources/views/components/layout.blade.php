@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-
-    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+    @yield('stylesheets')
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         html {
