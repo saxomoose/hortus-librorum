@@ -1,6 +1,6 @@
 .editorconfig
 .env
-.env.example
+.env.production
 /.idea
 /.vscode
 /node_modules
