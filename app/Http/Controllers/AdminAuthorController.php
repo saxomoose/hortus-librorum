@@ -36,7 +36,7 @@ class AdminAuthorController extends Controller
 
         Author::create($attributes);
 
-        return redirect()->route('admin.authors.index')->with('status', 'Author added.');
+        return redirect()->route('admin.authors.index')->with('status', 'Auteur ajouté.');
     }
 
     /**
@@ -59,7 +59,7 @@ class AdminAuthorController extends Controller
 
         $author->update($attributes);
 
-        return redirect()->route('admin.authors.index')->with('status', 'Author updated.');
+        return redirect()->route('admin.authors.index')->with('status', 'Auteur modifié.');
     }
 
     /**
@@ -69,7 +69,7 @@ class AdminAuthorController extends Controller
     {
         $author->delete();
 
-        return redirect()->route('admin.authors.index')->with('status', 'Author deleted.');
+        return redirect()->route('admin.authors.index')->with('status', 'Auteur supprimé.');
     }
 
     /**

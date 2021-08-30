@@ -48,7 +48,7 @@ class AdminSummaryController extends Controller
         $summary->authors()->attach($validatedAttributes['authors']);
         $summary->tags()->attach($validatedAttributes['tags']);
 
-        return redirect()->route('admin.summaries.index')->with('status', 'Summary added.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Résumé ajouté.');
     }
 
     /**
@@ -79,7 +79,7 @@ class AdminSummaryController extends Controller
         $summary->authors()->sync($validatedAttributes['authors']);
         $summary->tags()->sync($validatedAttributes['tags']);
 
-        return redirect()->route('admin.summaries.index')->with('status', 'Summary updated.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Résumé modifié.');
     }
 
     /**
@@ -89,7 +89,7 @@ class AdminSummaryController extends Controller
     {
         $summary->delete();
 
-        return redirect()->route('admin.summaries.index')->with('status', 'Summary deleted.');
+        return redirect()->route('admin.summaries.index')->with('status', 'Résumé supprimé.');
     }
 
     /**
