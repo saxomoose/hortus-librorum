@@ -17,7 +17,7 @@
                                 </a>
                             </h1>
                                 <div class="d-flex justify-content-center">
-                                    <small class="text-muted">By
+                                    <small class="text-muted">Par
                                         @foreach($summaries[0]->authors as $author)
                                             @if(!$loop->last)
                                                 <a href="/authors/{{$author->slug}}">
@@ -30,10 +30,10 @@
                                             @endif
                                         @endforeach
                                     </small>
-                                    <small class="text-muted mx-3">Published <time>{{\Carbon\Carbon::parse($summaries[0]->published_at)->diffForHumans()}}</time></small>
+                                    <small class="text-muted mx-3">Publié <time>{{\Carbon\Carbon::parse($summaries[0]->published_at)->diffForHumans()}}</time></small>
                                 </div>
                             <p class="lead text-muted">{!! $summaries[0]->excerpt !!}</p>
-                            <a href="/summaries/{{$summaries[0]->slug}}" class="btn btn-primary my-2">Continue reading more</a>
+                            <a href="/summaries/{{$summaries[0]->slug}}" class="btn btn-primary my-2">Continuer la lecture</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
             </section>
             {{$summaries->links()}}
         @else
-            <p class="text-center">No summaries yet available.</p>
+            <p class="text-center">Aucun article publié.</p>
         @endif
     </main>
 @section('scripts')

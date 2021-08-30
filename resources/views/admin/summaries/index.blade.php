@@ -4,14 +4,14 @@
             <x-flash-info></x-flash-info>
             <div class="row mt-4">
                 <div class="col">
-                    <a href="/admin">Back to admin</a>
+                    <a href="/admin">Retour à la page admin</a>
                 </div>
             </div>
             <section>
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('admin.summaries.create')}}" class="btn btn-primary">Add new summary</a>
+                            <a href="{{route('admin.summaries.create')}}" class="btn btn-primary">Ajouter un nouvel article</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <section>
                 <div class="row my-4">
                     <div class="col">
-                        <p><u>Summaries:</u></p>
+                        <p><u>Articles:</u></p>
                         <x-summary-overview></x-summary-overview>
                     </div>
                 </div>

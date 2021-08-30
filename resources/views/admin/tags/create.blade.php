@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col">
-                    <a href="{{route('admin.tags.index')}}">Back to dashboard</a>
+                    <a href="{{route('admin.tags.index')}}">Retour au tableau de bord</a>
                 </div>
             </div>
             <section>
@@ -12,11 +12,11 @@
                         <form method="POST" action="{{route('admin.tags.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Tag name</label>
+                                <label for="name">Nom de la catégorie</label>
                                 <input type="text" class="form-control" name="name" id="name" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </form>
                     </div>
                 </div>

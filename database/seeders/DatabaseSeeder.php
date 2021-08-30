@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run() {
-        Summary::factory(10)
+/*        Summary::factory(10)
             ->has(Author::factory()->count(2))//has() functions populate the intermediate tables.
             ->has(Tag::factory()->count(3))
-            ->create();
+            ->create();*///To be uncommented in development.
 
         User::factory(1)->create();
     }

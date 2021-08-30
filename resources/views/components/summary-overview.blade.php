@@ -24,8 +24,8 @@
             <form method="POST" action="{{route('admin.summaries.destroy', ['summary' => $summary])}}">
                 @csrf
                 @method('DELETE')
-                <a href="{{route('admin.summaries.edit', ['summary' => $summary])}}" class="btn btn-primary">Edit</a>
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{{route('admin.summaries.edit', ['summary' => $summary])}}" class="btn btn-primary">Modifier</a>
+                <button type="submit" class="btn btn-danger">Supprimer</button>
             </form>
 
         </div>

@@ -22,10 +22,10 @@ class UserFactory extends Factory {
     public function definition()
     {
         return [
-            'name' => env('ADMIN_NAME'),
-            'email' => env('ADMIN_EMAIL'),
+            'name' => config('admin.name'),
+            'email' => config('admin.email'),
             'email_verified_at' => now(),
-            'password' => bcrypt("ADMIN_PASSWORD")
+            'password' => bcrypt(config('admin.password'))
         ];
     }
 

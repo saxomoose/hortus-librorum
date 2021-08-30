@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Summary;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -27,14 +28,16 @@ class AdminSummaryController extends Controller
     /**
      * Store a newly created resource in storage.
      **/
-    public function store()
+    public function store(Request $request)
     {
         $validatedAttributes = $this->validateSummary();
 
         $summary = new Summary;
         $summary->title = $validatedAttributes['title'];
         $summary->slug = Str::slug($validatedAttributes['title']);
-        $summary->publication_year = $validatedAttributes['publication_year'];
+        if($request->filled('publication_year')) {
+            $summary->publication_year = $request['publication_year'];
+        }
         $summary->excerpt = $validatedAttributes['excerpt'];
         $summary->published_at = Carbon::now();
 
@@ -59,12 +62,14 @@ class AdminSummaryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Summary $summary)
+    public function update(Summary $summary, Request $request)
     {
         $validatedAttributes = $this->validateSummary();
         $summary->title = $validatedAttributes['title'];
         $summary->slug = Str::slug($validatedAttributes['title']);
-        $summary->publication_year = $validatedAttributes['publication_year'];
+        if($request->filled('publication_year')) {
+            $summary->publication_year = $request['publication_year'];
+        }
         $summary->excerpt = $validatedAttributes['excerpt'];
 
         $summary->lb_content = $validatedAttributes['body'];
@@ -98,7 +103,6 @@ class AdminSummaryController extends Controller
         return request()->validate([
             'authors' => ['required', Rule::exists('authors', 'id')],
             'title' => 'required',
-            'publication_year' => 'required',
             'tags' => ['required', Rule::exists('tags', 'id')],
             'excerpt' => 'required',
             'body' => 'required'

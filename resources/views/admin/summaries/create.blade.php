@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col">
-                    <a href="{{route('admin.summaries.index')}}">Back to dashboard</a>
+                    <a href="{{route('admin.summaries.index')}}">Retour au tableau de bord</a>
                 </div>
             </div>
             <div class="row my-4 pb-4">
@@ -19,24 +19,24 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6">
-                                <label for="title">Title</label>
+                                <label for="title">Titre</label>
                                 <input type="text" class="form-control" name="title" id="title" required>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label for="publication_year">Publication year</label>
-                                <input type="number" step="1" class="form-control" name="publication_year" id="publication_year" required>
+                                <label for="publication_year">Année de publication</label>
+                                <input type="number" step="1" class="form-control" name="publication_year" id="publication_year">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="excerpt">Excerpt</label>
+                            <label for="excerpt">Accroche</label>
                             <input type="text" class="form-control" name="excerpt" id="excerpt" required>
                         </div>
                         <div class="form-group">
-                            <label for="body">Body</label>
+                            <label for="body">Corps</label>
                             <textarea name="body" id="body" hidden></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            Laraberg.init('body', {height: '600px', sidebar: true})
+            Laraberg.init('body', {height: '600px', sidebar: false})
         })
     </script>
 @endsection

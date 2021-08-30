@@ -4,14 +4,14 @@
             <x-flash-info></x-flash-info>
             <div class="row mt-4">
                 <div class="col">
-                    <a href="/admin">Back to admin</a>
+                    <a href="/admin">Retour à la page admin</a>
                 </div>
             </div>
             <section>
                 <div class="row my-4">
                     <div class="col">
                         <div class="d-flex">
-                            <a href="{{route('admin.authors.create')}}" class="btn btn-primary">Add new author</a>
+                            <a href="{{route('admin.authors.create')}}" class="btn btn-primary">Ajouter un nouvel auteur</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <section>
                 <div class="row my-4">
                     <div class="col">
-                        <p><u>Authors:</u></p>
+                        <p><u>Auteurs:</u></p>
                         <x-author-overview></x-author-overview>
                     </div>
                 </div>

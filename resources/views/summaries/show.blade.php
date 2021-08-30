@@ -7,14 +7,16 @@
         <div class="container mt-4">
             <div class="row" >
                 <div class="col-sm-2">
-                    <a href="/">Back to overview</a>
+                    <a href="/">Retour à la page principale</a>
                     <ul style="list-style-type: none; padding: 0; margin: 0">
                     @foreach($summary->tags as $tag)
                             <li class="py-1"><a href="/tags/{{$tag->slug}}" class="border border-info rounded pl-1 pr-1">{{$tag->name}}</a></li>
                     @endforeach
                     </ul>
-                    <p class="my-1">Summary published <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time> </p>
-                    <p class="my-1">Book published in {{$summary->publication_year}}</p>
+                    <p class="my-1">Article publié <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time> </p>
+                    @if(isset($summary->publication_year))
+                            <p class="my-1">Livre publié en {{$summary->publication_year}}</p>
+                    @endif
                 </div>
                 <div class="col-sm-10">
                     <h1>{{$summary->title}}</h1>

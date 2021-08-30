@@ -17,11 +17,12 @@
                 </ul>
             </div>
         @endif
+        <p>Ce formulaire permet d'adresser un message à l'auteur des articles. N'hésitez pas à partager vos réflexions concernant ce blog.</p>
         <form method="POST" action="/contact">
             @csrf
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="name">Name</label>
+                    <label for="name">Prénom et nom</label>
                     <input type="text" class="form-control" name="name" id="name" required>
                 </div>
                 <div class="form-group col-md-6">

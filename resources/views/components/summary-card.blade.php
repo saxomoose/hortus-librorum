@@ -14,7 +14,7 @@
         </svg>
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <small class="text-muted">By
+                <small class="text-muted">De
                     @foreach($summary->authors as $author)
                         @if(!$loop->last)
                             <a href="/authors/{{$author->slug}}">
@@ -27,11 +27,11 @@
                         @endif
                     @endforeach
                 </small>
-                <small class="text-muted mx-3">Published <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time></small>
+                <small class="text-muted mx-3">Publié <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time></small>
             </div>
             <p class="card-text">{!! $summary->excerpt !!}</p>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="/summaries/{{$summary->slug}}" class="btn btn-sm btn-primary">View</a>
+                <a href="/summaries/{{$summary->slug}}" class="btn btn-sm btn-primary">Lire</a>
             </div>
         </div>
     </div>

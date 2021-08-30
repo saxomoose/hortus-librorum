@@ -24,12 +24,12 @@
                 <div class="row">
                     <div class="col-sm-8 py-2">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">This website serves as a repository of book summaries.</p>
+                        <p class="text-light">Ce blog contient des résumés de livres, ainsi que des réflexions personnelles.</p>
                     </div>
                     <div class="col-sm-4 py-2">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="/contact" class="text-white">Contact form</a></li>
+                            <li><a href="/contact" class="text-white">Formulaire de contact</a></li>
                         </ul>
                     </div>
                 </div>

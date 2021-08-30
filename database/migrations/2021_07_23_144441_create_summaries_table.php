@@ -16,7 +16,7 @@ class CreateSummariesTable extends Migration {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->year('publication_year');
+            $table->year('publication_year')->nullable();
             $table->text('excerpt');
             $table->string('thumbnail')->nullable();
             $table->timestamps();
