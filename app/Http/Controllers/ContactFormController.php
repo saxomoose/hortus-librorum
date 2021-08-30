@@ -23,6 +23,6 @@ class ContactFormController extends Controller {
     public function handleContactForm(ContactFormRequest $formRequest, Recipient $recipient){
         $recipient->notify(new ContactFormMessage($formRequest));
 
-        return redirect()->back()->with('message', 'Thank you for your message.');
+        return redirect()->back()->with('message', 'Merci pour votre message.');
     }
 }

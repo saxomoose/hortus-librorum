@@ -13,7 +13,7 @@ class Recipient extends Model {
     protected $email;
 
     public function __construct() {
-        $this->name = config('admin.name');
-        $this->email = config('admin.email');
+        $this->name = config('recipient.name');
+        $this->email = config('recipient.email');
     }
 }
