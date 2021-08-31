@@ -1,7 +1,7 @@
 <div class="col-sm-6">
     <div class="d-flex justify-content-end">
         @foreach($summary->tags as $tag)
-            <a href="/tags/{{$tag->slug}}" class="border border-info rounded mx-sm-1 pl-sm-1 pr-sm-1">{{$tag->name}}</a>
+            <a href="{{route('tags.show', ['tag' => $tag])}}" class="border border-info rounded mx-sm-1 pl-sm-1 pr-sm-1">{{$tag->name}}</a>
         @endforeach
     </div>
     <div class="card mb-sm-4 shadow-sm mt-sm-1">
@@ -21,7 +21,7 @@
                                 {{$author->name . ', '}}
                             </a>
                         @else
-                            <a href="/authors/{{$author->slug}}">
+                            <a href="{{route('authors.show', ['author' => $author])}}">
                                 {{$author->name}}
                             </a>
                         @endif
@@ -31,7 +31,7 @@
             </div>
             <p class="card-text">{!! $summary->excerpt !!}</p>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="/summaries/{{$summary->slug}}" class="btn btn-sm btn-primary">Lire</a>
+                <a href="{{route('summaries.show', ['summary' => $summary])}}" class="btn btn-sm btn-primary">Lire</a>
             </div>
         </div>
     </div>

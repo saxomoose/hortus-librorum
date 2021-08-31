@@ -7,10 +7,10 @@
         <div class="container my-sm-4">
             <div class="row" >
                 <div class="col-sm-2">
-                    <a href="/">Retour à la page principale</a>
+                    <a href="{{route('index')}}">Retour à la page principale</a>
                     <ul style="list-style-type: none; padding: 0; margin: 0">
                     @foreach($summary->tags as $tag)
-                            <li class="py-1"><a href="/tags/{{$tag->slug}}" class="border border-info rounded pl-sm-1 pr-sm-1">{{$tag->name}}</a></li>
+                            <li class="py-1"><a href="{{route('tags.show', ['tag' => $tag])}}" class="border border-info rounded pl-sm-1 pr-sm-1">{{$tag->name}}</a></li>
                     @endforeach
                     </ul>
                     <p class="my-sm-1">Article publié <time>{{\Carbon\Carbon::parse($summary->published_at)->diffForHumans()}}</time> </p>

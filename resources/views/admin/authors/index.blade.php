@@ -4,7 +4,7 @@
             <x-flash-info></x-flash-info>
             <div class="row mt-sm-4">
                 <div class="col">
-                    <a href="/admin">Retour à la page admin</a>
+                    <a href="{{route('admin.index')}}">Retour à la page admin</a>
                 </div>
             </div>
             <section>

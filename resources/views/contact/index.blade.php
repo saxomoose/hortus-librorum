@@ -18,7 +18,7 @@
             </div>
         @endif
         <p>Ce formulaire permet d'adresser un message à l'auteur des articles. N'hésitez pas à partager vos réflexions concernant ce blog.</p>
-        <form method="POST" action="/contact">
+        <form method="POST" action="{{route('contact.post')}}">
             @csrf
             <div class="form-row">
                 <div class="form-group col-sm-6">

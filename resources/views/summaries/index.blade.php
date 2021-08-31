@@ -8,23 +8,21 @@
                         <div class="col-sm-8 mx-sm-auto">
                             <div class="d-flex justify-content-end">
                                 @foreach($summaries[0]->tags as $tag)
-                                    <a href="/tags/{{$tag->slug}}" class="border border-info rounded mx-sm-1 pl-sm-1 pr-sm-1">{{$tag->name}}</a>
+                                    <a href="{{route('tags.show', ['tag' => $tag])}}" class="border border-info rounded mx-sm-1 pl-sm-1 pr-sm-1">{{$tag->name}}</a>
                                 @endforeach
                             </div>
-                            <h1 class="mt-sm-1">
-                                <a href="/summaries/{{$summaries[0]->slug}}">
+                            <h1 class="mt-sm-1 text-dark">
                                 {{$summaries[0]->title}}
-                                </a>
                             </h1>
                                 <div class="d-flex justify-content-center">
                                     <small class="text-muted">Par
                                         @foreach($summaries[0]->authors as $author)
                                             @if(!$loop->last)
-                                                <a href="/authors/{{$author->slug}}">
+                                                <a href="{{route('authors.show', ['author' => $author])}}">
                                                     {{$author->name . ', '}}
                                                 </a>
                                             @else
-                                                <a href="/authors/{{$author->slug}}">
+                                                <a href="{{route('authors.show', ['author' => $author])}}">
                                                      {{$author->name}}
                                                 </a>
                                             @endif
@@ -33,7 +31,7 @@
                                     <small class="text-muted mx-sm-3">Publié <time>{{\Carbon\Carbon::parse($summaries[0]->published_at)->diffForHumans()}}</time></small>
                                 </div>
                             <p class="lead text-muted">{!! $summaries[0]->excerpt !!}</p>
-                            <a href="/summaries/{{$summaries[0]->slug}}" class="btn btn-primary my-sm-2">Continuer la lecture</a>
+                            <a href="{{route('summaries.show', ['summary' => $summaries[0]])}}" class="btn btn-primary my-sm-2">Continuer la lecture</a>
                         </div>
                     </div>
                 </div>

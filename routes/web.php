@@ -32,7 +32,7 @@ Route::middleware('auth')->prefix('auth')->name('auth.')->group(function() {
 //Send GET request to /login endpoint to access /admin route.
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     //Route to landing page of admin section.
-    Route::get('', [AdminController::class, 'index']);
+    Route::get('', [AdminController::class, 'index'])->name('index');
     //Resource controller for Summary model.
     Route::resource('summaries', AdminSummaryController::class)->except('show');
     //Resource controller for Tag model.
@@ -43,18 +43,20 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
 
 //Public section
 //Route to landing page of public section.
-Route::get('/', [SummaryController::class, 'index']);
+Route::get('/', [SummaryController::class, 'index'])->name('index');
 //Route to display all summaries linked to a given tag.
-Route::get('tags/{tag:slug}', [TagController::class, 'index']);
+Route::get('tags/{tag:slug}', [TagController::class, 'index'])->name('tags.show');
 //Route to display all summaries of books published by a given author.
-Route::get('authors/{author:slug}', [AuthorController::class, 'index']);
+Route::get('authors/{author:slug}', [AuthorController::class, 'index'])->name('authors.show');
 
 //Route to single summary view.
-Route::get('summaries/{summary:slug}', [SummaryController::class, 'show']);
+Route::get('summaries/{summary:slug}', [SummaryController::class, 'show'])->name('summaries.show');
 
 //Routes to access and handle contact form.
-Route::get('/contact', [ContactFormController::class, 'index']);
-Route::post('/contact', [ContactFormController::class, 'handleContactForm']);
+Route::name('contact.')->group(function () {
+    Route::get('/contact', [ContactFormController::class, 'index'])->name('index');
+    Route::post('/contact', [ContactFormController::class, 'handleContactForm'])->name('post');
+});
 
 
 
