@@ -1,6 +1,6 @@
 @foreach($summaries as $summary)
-    <div class="d-flex my-1">
-        <div class="mr-3">{{$summary->id}}</div>
+    <div class="d-flex my-sm-1">
+        <div class="mr-sm-3">{{$summary->id}}</div>
         <div class="flex-fill">
             @foreach($summary->authors as $author)
                 @if(!$loop->last)

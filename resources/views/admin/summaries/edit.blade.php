@@ -4,19 +4,19 @@
 @endsection
     <main role="main">
         <div class="container">
-            <div class="row mt-4">
+            <div class="row mt-sm-4">
                 <div class="col">
                     <a href="{{route('admin.summaries.index')}}">Retour au tableau de bord</a>
                 </div>
             </div>
-            <div class="row my-4 pb-4">
+            <div class="row my-sm-4 pb-sm-4">
                 <div class="col">
                     <form method="POST" action="{{route('admin.summaries.update', ['summary' => $summary])}}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="row">
-                            <x-author-select></x-author-select>
-                            <x-tag-select></x-tag-select>
+                            <x-author-select-edit :summary="$summary"></x-author-select-edit>
+                            <x-tag-select-edit :summary="$summary"></x-tag-select-edit>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6">
@@ -25,8 +25,9 @@
                             </div>
                             @if(isset($summary->publication_year))
                                 <div class="form-group col-sm-6">
-                                    <label for="publication_year">Année de publication</label>
+                                    <label for="publication_year">Année de publication <span class="text-muted">(uniquement pour résumés)</span></label>
                                     <input type="number" step="1" class="form-control" name="publication_year" id="publication_year" value="{{$summary->publication_year}}">
+
                                 </div>
                             @endif
                         </div>

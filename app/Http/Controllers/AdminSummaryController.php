@@ -62,8 +62,7 @@ class AdminSummaryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Summary $summary, Request $request)
-    {
+    public function update(Summary $summary, Request $request) {
         $validatedAttributes = $this->validateSummary();
         $summary->title = $validatedAttributes['title'];
         $summary->slug = Str::slug($validatedAttributes['title']);
@@ -71,7 +70,6 @@ class AdminSummaryController extends Controller
             $summary->publication_year = $request['publication_year'];
         }
         $summary->excerpt = $validatedAttributes['excerpt'];
-
         $summary->lb_content = $validatedAttributes['body'];
 
         $summary->save();

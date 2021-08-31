@@ -1,8 +1,8 @@
 <x-admin-layout>
     <main role="main">
-        <div class="container mt-4">
+        <div class="container mt-sm-4">
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <div class="card">
                         <div class="card-header">{{ __('Confirm Password') }}</div>
 
@@ -14,9 +14,9 @@
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <label for="password" class="col-sm-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                         @error('password')
@@ -27,8 +27,8 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
+                                <div class="form-group row mb-sm-0">
+                                    <div class="col-sm-8 offset-sm-4">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Confirm Password') }}
                                         </button>

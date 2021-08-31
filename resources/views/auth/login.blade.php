@@ -1,6 +1,6 @@
 <x-layout>
     <main role="main">
-        <div class="container my-5">
+        <div class="container my-sm-5">
             <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="card">
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-0">
+                                <div class="form-group row mb-sm-0">
                                     <div class="col-sm-8 offset-sm-4">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Login') }}

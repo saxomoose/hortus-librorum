@@ -6,6 +6,7 @@ use App\Models\Tag;
 use Illuminate\View\Component;
 
 class TagSelect extends Component {
+
     /**
      * Create a new component instance.
      *

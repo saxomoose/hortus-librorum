@@ -22,11 +22,11 @@
         <div class="collapse bg-dark" id="navbarHeader">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 py-2">
+                    <div class="col-sm-8 py-sm-2">
                         <h4 class="text-white">About</h4>
                         <p class="text-light">Ce blog contient des résumés de livres, ainsi que des réflexions personnelles.</p>
                     </div>
-                    <div class="col-sm-4 py-2">
+                    <div class="col-sm-4 py-sm-2">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
                             <li><a href="/contact" class="text-white">Formulaire de contact</a></li>

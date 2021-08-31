@@ -6,6 +6,7 @@ use App\Models\Author;
 use Illuminate\View\Component;
 
 class AuthorSelect extends Component {
+
     /**
      * Create a new component instance.
      *

@@ -1,8 +1,8 @@
 @foreach($tags as $tag)
-    <div class="d-flex my-1">
-        <div class="mr-3">{{$tag->id}}</div>
+    <div class="d-flex my-sm-1">
+        <div class="mr-sm-3">{{$tag->id}}</div>
         <div class="flex-fill">{{$tag->name}}</div>
-        <div class="ml-auto">
+        <div class="ml-sm-auto">
             <form method="POST" action="{{route('admin.tags.destroy', ['tag' => $tag])}}">
                 @csrf
                 @method('DELETE')

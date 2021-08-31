@@ -1,13 +1,13 @@
 <x-admin-layout>
     <main role="main">
         <div class="container">
-            <div class="row mt-4">
+            <div class="row mt-sm-4">
                 <div class="col">
                     <a href="{{route('admin.authors.index')}}">Retour au tableau de bord</a>
                 </div>
             </div>
             <section>
-                <div class="row my-4 pb-4">
+                <div class="row my-sm-4 pb-sm-4">
                     <div class="col-sm-6">
                         <form method="POST" action="{{route('admin.authors.update', ['author' => $author])}}" enctype="multipart/form-data">
                             @csrf

@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container mt-4">
+    <div class="container mt-sm-4">
         @if(session('message'))
             <div class='alert alert-success alert-dismissible'>
                 {{ session('message') }}
@@ -21,11 +21,11 @@
         <form method="POST" action="/contact">
             @csrf
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-6">
                     <label for="name">Prénom et nom</label>
                     <input type="text" class="form-control" name="name" id="name" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-6">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="e.g. email@example.com" required>
                 </div>

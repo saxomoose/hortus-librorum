@@ -4,12 +4,12 @@
 @endsection
     <main role="main">
         <div class="container">
-            <div class="row mt-4">
+            <div class="row mt-sm-4">
                 <div class="col">
                     <a href="{{route('admin.summaries.index')}}">Retour au tableau de bord</a>
                 </div>
             </div>
-            <div class="row my-4 pb-4">
+            <div class="row my-sm-4 pb-sm-4">
                 <div class="col">
                     <form method="POST" action="{{route('admin.summaries.store')}}" enctype="multipart/form-data">
                         @csrf
@@ -23,7 +23,7 @@
                                 <input type="text" class="form-control" name="title" id="title" required>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label for="publication_year">Année de publication</label>
+                                <label for="publication_year">Année de publication <span class="text-muted">(uniquement pour résumés)</span></label>
                                 <input type="number" step="1" class="form-control" name="publication_year" id="publication_year">
                             </div>
                         </div>
