@@ -1,10 +1,15 @@
 <x-layout>
 @section('stylesheets')
         <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+        <style>
+            .gutenberg__content p {
+                text-align: justify;
+            }
+        </style>
 @endsection
     <x-tag-dropdown />
     <main role="main">
-        <div class="container my-sm-4">
+        <div class="container my-sm-4 pb-sm-4">
             <div class="row" >
                 <div class="col-sm-2">
                     <a href="{{route('index')}}">Retour à la page principale</a>

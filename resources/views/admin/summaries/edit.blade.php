@@ -25,7 +25,7 @@
                             </div>
                             @if(isset($summary->publication_year))
                                 <div class="form-group col-sm-6">
-                                    <label for="publication_year">Année de publication <span class="text-muted">(uniquement pour résumés)</span></label>
+                                    <label for="publication_year">Année de publication</label>
                                     <input type="number" step="1" class="form-control" name="publication_year" id="publication_year" value="{{$summary->publication_year}}">
 
                                 </div>
