@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container mt-sm-4">
+    <div class="container my-sm-4">
         @if(session('message'))
             <div class='alert alert-success alert-dismissible'>
                 {{ session('message') }}

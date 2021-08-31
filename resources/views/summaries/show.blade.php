@@ -4,7 +4,7 @@
 @endsection
     <x-tag-dropdown />
     <main role="main">
-        <div class="container mt-sm-4">
+        <div class="container my-sm-4">
             <div class="row" >
                 <div class="col-sm-2">
                     <a href="/">Retour à la page principale</a>
